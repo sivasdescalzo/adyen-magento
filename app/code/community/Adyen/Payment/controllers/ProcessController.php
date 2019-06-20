@@ -127,7 +127,7 @@ class Adyen_Payment_ProcessController extends Mage_Core_Controller_Front_Action
         try {
             $session = $this->_getCheckout();
             $order = $this->_getOrder();
-            $quoteId = $session->getQuoteId();
+            $quoteId = $session->getLastQuoteId();
 
             $session->setAdyenQuoteId($quoteId);
             $session->setAdyenRealOrderId($session->getLastRealOrderId());
